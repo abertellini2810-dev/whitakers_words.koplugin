@@ -3,6 +3,8 @@ A little plugin for KOReader to use Whitaker's Words in texts: highlight a Latin
 
 Whitaker's Words is a program that takes as input a Latin word and outputs likely definitions and inflections. This is especially useful for people learning to read Latin. This plugin gives a way to use Whitaker's Words from within KOReader: simply highlight the word and press the appropriate button in the Highlight menu. This will open a pop-up with Whitaker's Words's output. I will also add a separate button that allows for text input.
 
+To use this plugin, have KOReader installed on your Kobo, and drag the files into the plugins file.
+
 The original program was written by Whitaker and his code, written in Ada, is hosted here: https://github.com/mk270/whitakers-words
 
 This plugin is still a work in progress, and any feedback is appreciated.
