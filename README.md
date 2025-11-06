@@ -14,12 +14,13 @@ Please note that this plugin makes use of the "words" program compiled for Kobo 
 
 Notes on compilation:
 To cross-compile the original program, I needed to adjust the Makefile and shared.gpr that can be found in the original repository.
--Makefile 
+
+Makefile 
 In "GPRBUILD_OPTIONS" I added the flag "--target=arm-linux-gnueabihf".
 
 I also replaced line 40 with "$(GPRBUILD) -p $(GPRBUILD_OPTIONS) commands.gpr -largs -Wl,-rpath,../../lib -static". This ensures static compilation, and clearly -rpath should point to wherever the static libraries are stored.
 
 Finally, since we are cross-compiling, the various program calls (now compiled for arm) starting from line 58 onward must be replaced with calls to programs already compiled for our host system. Thus I changed eg line 59 from "echo g | bin/wakedict $<" to "echo g | bin-host/wakedict $<", and in general whoever compiles should make sure to point to the same programs compiled for the host machine.
 
--shared.gpr
+shared.gpr
 I changed the flag on line 9 from "-gnatwae" to "-gnatwa". This makes it so that warnings are no longer treated as errors, and the compilation continues (otherwise the compilation was stopping on I think an extra parenthesis).
